@@ -1,0 +1,16 @@
+if [ `echo $SHELL | grep 'zsh'` ] ; then
+  printf "zsh\n"
+  ENV_FILE="zshrc"
+elif [ `echo $SHELL | grep 'fish'` ] ; then
+  printf "fish\n"
+  printf "
+申し訳ありません。fishは対応していません。zshに変更してからお試しください。
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+"
+  return 2>&- || exit
+else
+  printf "bash\n"
+  ENV_FILE="bash_profile"
+fi
+
+sed -i .bak '/rbenv init/d' ~/.$ENV_FILE
