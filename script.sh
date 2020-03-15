@@ -11,8 +11,8 @@ else
   ENV_FILE="bash_profile"
 fi
 
+bundle config --delete build.mysql2
 sed -i .bak '/rbenv init/d' ~/.$ENV_FILE
-rm -rf ~/.bundle
 
 printf "
 仕込み完了です。
