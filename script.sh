@@ -11,7 +11,9 @@ else
   ENV_FILE="bash_profile"
 fi
 
+mv .ruby-version .ruby-version_bk
 bundle config --delete build.mysql2
+mv .ruby-version_bk .ruby-version
 sed -i .bak '/rbenv init/d' ~/.$ENV_FILE
 
 printf "
