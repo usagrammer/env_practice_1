@@ -11,7 +11,7 @@ else
   ENV_FILE="bash_profile"
 fi
 
-sed -i .bak '/MYSQL"/d' ~/.bundle/config
+sed -i .bak '/MYSQL/d' ~/.bundle/config
 sed -i .bak '/rbenv init/d' ~/.$ENV_FILE
 
 printf "
