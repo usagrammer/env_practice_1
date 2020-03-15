@@ -12,6 +12,7 @@ else
 fi
 
 sed -i .bak '/rbenv init/d' ~/.$ENV_FILE
+bundle config --delete build.mysql2
 
 printf "
 仕込み完了です。
